@@ -1,0 +1,77 @@
+{% load ai_links %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vulnerability Handling Requirements</title>
+    <!-- Use data-bs-theme for Bootstrap 5.3+ dark mode compatibility -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background-color:#eef1f6;">
+<div class="container py-5 d-flex justify-content-center">
+    <div style="max-width:800px;width:100%;">
+        <h1 class="mb-4 text-center">Vulnerability Handling Requirements</h1>
+        <div class="text-muted text-center mb-4">
+            <h3><strong>
+                You are questioned about the vulnerability management procedures for your product in this last section.
+                How you track, report, and fix security flaws over the course of your product's lifecycle is covered in the questions.
+                This covers procedures for alerting users to important updates, patch release schedules, and vulnerability disclosure policies.
+                Your answers will demonstrate how you take proactive steps to safeguard users and keep your digital product secure.
+            </strong></h3>
+        </div>
+        <h2 class="text-center mb-4"><strong>Manufacturers of the products with digital elements shall:</strong></h2>
+
+        <form method="post" class="card p-4 shadow-sm bg-white rounded-4">
+            {% csrf_token %}
+            {% for req in vuln_reqs %}
+                <div class="mb-4 text-center">
+                    <label class="form-label d-block">
+                        <strong>{{ forloop.counter }}. {{ req.title|link_keywords|safe }}</strong>
+                    </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="requirement_{{ req.id }}" id="yes{{ req.id }}" value="True" required>
+                        <label class="form-check-label" for="yes{{ req.id }}">✅ Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="requirement_{{ req.id }}" id="no{{ req.id }}" value="False">
+                        <label class="form-check-label" for="no{{ req.id }}">❌ No</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="requirement_{{ req.id }}" id="partial{{ req.id }}" value="Partial">
+                        <label class="form-check-label" for="partial{{ req.id }}">⚠️ Partially Implemented</label>
+                    </div>
+                    <div id="explanation_{{ req.id }}" class="mt-2" style="display:none;">
+                        <textarea class="form-control" name="explanation_{{ req.id }}" placeholder="Please explain..." rows="3"></textarea>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Single event listener for all radio buttons
+    document.querySelector('form').addEventListener('change', function(event) {
+        const radio = event.target;
+        if (!radio.matches('input[type="radio"]')) return;
+        const reqId = radio.name.split('_')[1];
+        const explanation = document.getElementById(`explanation_${reqId}`);
+        if (!explanation) return;
+        explanation.style.display = (radio.value === 'Partial') ? 'block' : 'none';
+    });
+    // Initialize visibility on page load
+    document.querySelectorAll('input[type="radio"][value="Partial"]').forEach(radio => {
+        if (radio.checked) {
+            const reqId = radio.name.split('_')[1];
+            const explanation = document.getElementById(`explanation_${reqId}`);
+            if (explanation) explanation.style.display = 'block';
+        }
+    });
+});
+</script>
+</body>
+</html>

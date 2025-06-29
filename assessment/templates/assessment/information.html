@@ -1,0 +1,228 @@
+<!-- assessment/templates/information.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Information Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+    background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+    color: white;
+    min-height: 100vh;
+    padding: 50px;
+}
+.content-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+</style>
+
+    
+    
+</head>
+<body>
+<div class="container">
+    <div class="info-container">
+        <div class="info-container">
+            <div class="container my-5">
+    <h1 class="text-center mb-4">🛡️ Cyber Resilience Act Compliance System</h1>
+
+    <h2>Overview</h2>
+    <p>
+        The <strong>Cyber Resilience Act Compliance System</strong> is a web-based Django application designed to help manufacturers and organizations evaluate their cybersecurity posture in accordance with the European Union’s <strong>Cyber Resilience Act (CRA)</strong>. The platform enables users to assess whether their digital products meet the essential cybersecurity requirements mandated by the CRA.
+    </p>
+
+    <h2>🔐 Key Features</h2>
+    <ul>
+        <li><strong>User Authentication:</strong> Users log in to access the system dashboard. Superusers are granted elevated privileges.</li>
+        <li><strong>Home Page:</strong> A landing page featuring a login button, welcoming users.</li>
+        <li><strong>Dashboard (Post-Login):</strong> Displays key navigation options for logged-in users:
+            <ul>
+                <li> Test Your Compliance</li>
+                <li> View Information Sheet</li>
+                <li> Logout</li>
+            </ul>
+        </li>
+        <li><strong>CRA Compliance Checklist:</strong> An interactive form that walks the user through cybersecurity requirements grouped into:
+            <ul>
+                <li><strong>Annex I Requirements</strong></li>
+                <li><strong>Annex II Requirements</strong></li>
+                <li><strong>Vulnerability Handling Requirements</strong></li>
+            </ul>
+            For each requirement, the user selects:
+            <ul>
+                <li> Yes (Compliant)</li>
+                <li> No (Not Compliant)</li>
+                <li> Partially Compliant — with an explanation box</li>
+            </ul>
+        </li>
+        <li><strong>Result Summary:</strong> After submission, users receive a compliance score and best practice recommendations tailored to unmet or partially met items.</li>
+        <li><strong>Information Sheet:</strong> A formatted reference page explaining the CRA, product classifications, user instructions, and regulatory expectations.</li>
+        <li><strong>Important: After you print and sign the document that expresses your compliance at the bottom of the page, you need to also have the compliance score with a "fully compliant" result or with proper explanations as to why you are partially compliant. Under those circumstances you are deemed Compliant.</strong></li>
+
+    </ul>
+
+    <h2> Purpose</h2>
+    <p>
+        This system was developed as a support tool for organizations preparing for compliance with the CRA (effective from <strong>December 2027</strong>). It guides product developers and cybersecurity teams through best practices, ensuring security-by-design principles are applied throughout the product lifecycle, and if not, what the manufacturer needs to do to become compliant.
+    </p>
+
+    
+
+    <hr class="my-5">
+</div>
+    <h1 class="text-center mb-5">Cyber Resilience Act</h1>
+
+    <p>
+        The Cyber Resilience Act enhances cybersecurity standards of products that contain a digital component, requiring manufacturers and retailers to ensure cybersecurity throughout the lifecycle of their products.
+    </p>
+    <p>
+        From baby-monitors to smart-watches, products and software that contain a digital component are omnipresent in our daily lives. Less apparent to many users is the security risk such products and software may present.
+    </p>
+    <p>
+        The Cyber Resilience Act (CRA) aims to safeguard consumers and businesses buying software or hardware products with a digital component. The CRA addresses the inadequate level of cybersecurity in many products, and the lack of timely security updates for products and software. It also tackles the challenges consumers and businesses currently face when trying to determine which products are cybersecure and in setting them up securely. The new requirements will make it easier to take cybersecurity into account when selecting and using products that contain digital elements. It will be more straightforward to identify hardware and software products with the proper cybersecurity features.
+    </p>
+    <p>
+        The Cyber Resilience Act introduces mandatory cybersecurity requirements for manufacturers and retailers, governing the planning, design, development, and maintenance of such products. These obligations must be met at every stage of the value chain. The act also requires manufacturers to provide care during the lifecycle of their products. Some critical products of particular relevance for cybersecurity will also need to undergo a third-party assessment by an authorised body before they are sold in the EU market.
+    </p>
+    <p>
+        The regulation applies to all products connected directly or indirectly to another device or network except for specified exclusions such as certain open-source software or services products that are already covered by existing rules, which is the case for medical devices, aviation and cars. Products will bear the CE marking to indicate that they comply with the CRA requirements. The new rules will rebalance responsibility towards manufacturers, who must ensure their products with digital elements meet cybersecurity standards for the EU market. This will allow buyers to make more informed decisions, trusting the cybersecurity of CE-marked products.
+    </p>
+    <p>
+        The Cyber Resilience Act entered into force on <strong>10 December 2024</strong>. The main obligations introduced by the Act will apply from <strong>11 December 2027</strong>.
+    </p>
+    <h2>📚 Reference</h2>
+        <p>
+             This system incorporates guidance and interpretation from:
+            <br>
+            <a href="https://openssf.org/public-policy/eu-cyber-resilience-act/" target="_blank">
+               OpenSSF: EU Cyber Resilience Act
+         </a>
+        </p>
+        <h1 class="text-center mb-4">Cyber Resilience Act – Information Sheet</h1>
+
+        <h2>Instructions to the User</h2>
+        <p>As a minimum, the product with digital elements shall be accompanied by:</p>
+        <ol>
+            <li>The name, registered trade name or trademark of the manufacturer, postal and email address.</li>
+            <li>Point of contact for cybersecurity vulnerabilities.</li>
+            <li>Correct identification (type, batch, version, serial, etc.) and corresponding instructions.</li>
+            <li>Intended use, essential functions, and security environment information.</li>
+            <li>Known/foreseeable circumstances that may lead to cybersecurity risks.</li>
+            <li>Access to the software bill of materials, if applicable.</li>
+            <li>Internet address for the EU declaration of conformity, if applicable.</li>
+            <li>Technical security support information, including duration and update expectations.</li>
+            <li>Instructions for:
+                <ul>
+                    <li>Initial commissioning and secure use</li>
+                    <li>Effects of product changes on data security</li>
+                    <li>Installing security updates</li>
+                    <li>Secure decommissioning of the product</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Annex III: Critical Products with Digital Elements</h2>
+
+        <h3>Class I</h3>
+        <ul>
+            <li>Identity management systems, privileged access tools</li>
+            <li>Browsers, password managers, antivirus tools</li>
+            <li>VPNs, network monitoring, firewalls, routers</li>
+            <li>Operating systems not in class II, modems, switches</li>
+            <li>Microprocessors, ASICs, FPGAs, IACS</li>
+            <li>IoT devices not in class II</li>
+        </ul>
+
+        <h3>Class II</h3>
+        <ul>
+            <li>OS for servers/desktops/mobiles, hypervisors, PKI</li>
+            <li>Industrial-use firewalls, secure elements, HSMs</li>
+            <li>Smartcards, tokens, robot control components</li>
+            <li>Secure cryptoprocessors, industrial IACS and IoT</li>
+            <li>Smart meters</li>
+        </ul>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       <hr>
+    
+<div id="declaration-section">
+    <h1>EU DECLARATION OF CONFORMITY (Annex IV)</h1>
+    <div>
+        <p>The EU declaration of conformity referred to in Article 20 shall contain all of the following information:</p>
+
+        <ol>
+            <li><strong>Name and type and any additional information enabling the unique identification of the product with digital elements;</strong></li>
+            <li><strong>Name and address of the manufacturer or his authorised representative;</strong></li>
+            <li><strong>A statement that the EU declaration of conformity is issued under the sole responsibility of the provider;</strong></li>
+            <li><strong>Object of the declaration (identification of the product allowing traceability. It may include a photograph, where appropriate);</strong></li>
+            <li><strong>A statement that the object of the declaration described above is in conformity with the relevant Union harmonisation legislation;</strong></li>
+            <li><strong>References to any relevant harmonised standards used or any other common specification or cybersecurity certification in relation to which conformity is declared;</strong></li>
+            <li><strong>Where applicable, the name and number of the notified body, a description of the conformity assessment procedure performed and identification of the certificate issued;</strong></li>
+            <li><strong>Additional information:</strong></li>
+        </ol>
+
+        
+
+        <p><strong>Signed for and on behalf of:</strong> …………………………………</p>
+        <p><strong>(place and date of issue):</strong> …………………………………</p>
+        <p><strong>(name, function):</strong> …………………………………</p>
+        <p><strong>(signature):</strong> …………………………………</p>
+        <div class="text-center mt-4">
+            <button onclick="window.print();" class="btn btn-primary">Print Declaration</button>
+        </div>
+    </div>
+</div>
+<br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <h2>Annex V: Technical Documentation Contents</h2>
+        <p>Shall include:</p>
+        <ol>
+            <li><strong>Product Description</strong>
+                <ul>
+                    <li>Purpose, software version, layout/photos</li>
+                    <li>User instructions</li>
+                </ul>
+            </li>
+            <li><strong>Design, Development & Production</strong>
+                <ul>
+                    <li>Design documents, architecture, drawings</li>
+                    <li>Vulnerability handling (SBOM, CVD, update security)</li>
+                    <li>Production process and monitoring validation</li>
+                </ul>
+            </li>
+            <li><strong>Cybersecurity Risk Assessment</strong> (as per Article 10)</li>
+            <li><strong>Standards & Specifications</strong>
+                <ul>
+                    <li>List of standards/specs/certifications used or alternatives</li>
+                    <li>Details on partially applied standards</li>
+                </ul>
+            </li>
+            <li><strong>Conformity Testing Reports</strong></li>
+            <li><strong>Copy of the EU Declaration of Conformity</strong></li>
+            <li><strong>Software Bill of Materials</strong> (upon request, if required)</li>
+        </ol>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'dashboard' %}" class="btn btn-primary">⬅ Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

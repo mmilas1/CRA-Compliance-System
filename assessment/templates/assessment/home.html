@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRA Compliance System - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+            min-height: 100vh;
+            color: #ffffff;
+        }
+        .center-box {
+            max-width: 600px;
+            margin: auto;
+            padding: 50px 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .btn-custom {
+            background-color: #ffffff;
+            color: #2a5298;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="center-box text-center">
+            <h1 class="mb-4">Cyber Resilience Act Compliance System</h1>
+            <a href="{% url 'login' %}" class="btn btn-custom btn-lg w-100">🔐 Login</a>
+        </div>
+    </div>
+</body>
+</html>
