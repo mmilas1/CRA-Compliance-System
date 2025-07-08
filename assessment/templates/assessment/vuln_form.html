@@ -4,31 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Vulnerability Handling Requirements</title>
-    <!-- Use data-bs-theme for Bootstrap 5.3+ dark mode compatibility -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-color:#eef1f6;">
-<div class="container py-5 d-flex justify-content-center">
-    <div style="max-width:800px;width:100%;">
+<div class="container py-5">
+    <div class="mx-auto" style="max-width:800px;">
         <h1 class="mb-4 text-center">Vulnerability Handling Requirements</h1>
-        <div class="text-muted text-center mb-4">
-            <h3><strong>
-                You are questioned about the vulnerability management procedures for your product in this last section.
-                How you track, report, and fix security flaws over the course of your product's lifecycle is covered in the questions.
-                This covers procedures for alerting users to important updates, patch release schedules, and vulnerability disclosure policies.
+        <div class="text-muted mb-4">
+            <h3 class="fw-bold text-start" style="font-size:1.25rem;">
+                You are questioned about the vulnerability management procedures for your product in this last section.<br>
+                How you track, report, and fix security flaws over the course of your product's lifecycle is covered in the questions.<br>
+                This covers procedures for alerting users to important updates, patch release schedules, and vulnerability disclosure policies.<br>
                 Your answers will demonstrate how you take proactive steps to safeguard users and keep your digital product secure.
-            </strong></h3>
+            </h3>
         </div>
-        <h2 class="text-center mb-4"><strong>Manufacturers of the products with digital elements shall:</strong></h2>
+        <h2 class="text-start mb-4"><strong>Manufacturers of the products with digital elements shall:</strong></h2>
 
         <form method="post" class="card p-4 shadow-sm bg-white rounded-4">
             {% csrf_token %}
             {% for req in vuln_reqs %}
-                <div class="mb-4 text-center">
-                    <label class="form-label d-block">
+                <div class="mb-4">
+                    <label class="form-label d-block text-start">
                         <strong>{{ forloop.counter }}. {{ req.title|link_keywords|safe }}</strong>
                     </label>
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline ms-2">
                         <input class="form-check-input" type="radio" name="requirement_{{ req.id }}" id="yes{{ req.id }}" value="True" required>
                         <label class="form-check-label" for="yes{{ req.id }}">✅ Yes</label>
                     </div>
@@ -45,7 +44,7 @@
                     </div>
                 </div>
             {% endfor %}
-            <div class="text-center mt-4">
+            <div class="text-end mt-4">
                 <button type="submit" class="btn btn-primary btn-lg">Submit</button>
             </div>
         </form>
